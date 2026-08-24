@@ -63,14 +63,15 @@
 
 
             <!-- PESQUISA -->
-            <form class="search-form">
-
+            <form class="search-form" onsubmit="event.preventDefault();">
+                
                 <input
+                    id="inputPesquisa"
                     type="text"
                     placeholder="Pesquisar..."
                     aria-label="Pesquisar"
+                    onkeyup="filtrarConteudoPagina()"
                 >
-
             </form>
 
         </div>
