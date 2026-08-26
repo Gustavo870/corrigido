@@ -42,7 +42,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php#libras">
+                    <a class="nav-link" href="importanciaLibras.php">
                         IMPORTÂNCIA DA LIBRAS
                     </a>
                 </li>
