@@ -93,6 +93,7 @@
 
 
 
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -110,6 +111,7 @@ body, h1, .botao-titulo {
     font-family: 'Inter', sans-serif !important;
 }
 
+
 .botao-titulo {
   background-color: #EAE8E4;
   color: #000000;
@@ -121,31 +123,33 @@ body, h1, .botao-titulo {
   align-items: center;
   border: none;
   cursor: pointer;
-  width: 100%; /* Ocupa a largura total da tela igual na imagem */
+  width: 100%;
   text-align: left;
 }
+
+
 
 #seta {
   margin-left: 8px;
   font-size: 0.9em;
-  transition: transform 0.2s ease; /* Transição suave para girar a seta */
+  transition: transform 0.2s ease;
   display: inline-block;
 }
 
-/* Classe utilitária para esconder os itens */
+
 .escondido {
   display: none !important;
 }
 
-/* Classe para girar a seta para cima quando fechado */
+
 .seta-invertida {
   transform: rotate(180deg);
 }
 
-/* Configuração da grade onde ficam os cards (exemplo baseado na imagem) */
+
 .grade-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas horizontais */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px 0;
 }
@@ -10884,4 +10888,103 @@ header {
 section {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+.fw-black { font-weight: 900; }
+        .text-azul-escuro { color: var(--azul-escuro); }
+        .text-azul-claro { color: var(--azul-claro); }
+
+
+        .hero-box {
+            background-color: #4876d6;
+            border-radius: 1.5rem;
+            position: relative;
+            padding: 1rem 2rem 0 1rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .hero-img {
+            max-height: 250px;
+            margin-top: -35px;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            max-width: 290px;
+            width: 100%;
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #102951;
+            margin: 0;
+        }
+
+        .quote-icon {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #102951;
+            line-height: 1;
+            display: block;
+        }
+
+        .secao-cards {
+            background-color: var(--fundo-cinza);
+            padding: 5rem 0;
+        }
+        
+        .card-motivo {
+            border-radius: 1rem;
+            border: none;
+            color: #ffffff;
+            padding: 2rem 1.5rem;
+            height: 100%;
+        }
+
+        .banner-sabia {
+            background-color: var(--azul-claro);
+            border-radius: 50px;
+            color: #ffffff;
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .icone-lampada {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+@media (max-width: 768px) {
+    .hero-box {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center; 
+        padding: 1rem; 
+    }
+
+    .hero-img {
+        margin-top: -50px; 
+        margin-bottom: 1rem; 
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 0;
+    }
 }
