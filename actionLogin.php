@@ -1,37 +1,34 @@
 <?php
+    include "conexaoBD.php"; // Inclui o arquivo de conexão com o BD
+    session_start();
 
-    include "conexaoBD.php"; //Inclui o arquivo de conexão com o BD para consultar usuários
-    session_start(); //Função para iniciar uma sessão
-
-    $emailUsuario = mysqli_real_escape_string($conn, $_POST['emailUsuario']); //Filtra a entrada de dados
+    $emailUsuario = mysqli_real_escape_string($conn, $_POST['emailUsuario']);
     $senhaUsuario = mysqli_real_escape_string($conn, $_POST['senhaUsuario']);
 
-    //QUERY para buscar dados de login
+    // QUERY corrigida (nome da tabela em minúsculo: 'usuarios')
     $buscarLogin = "SELECT *
-                    FROM Usuarios
+                    FROM usuarios
                     WHERE emailUsuario = '$emailUsuario'
-                    AND senhaUsuario = md5('$senhaUsuario') ";
+                    AND senhaUsuario = md5('$senhaUsuario')";
 
-    //Executa a QUERY
+    // Executa a QUERY
     $efetuarLogin = mysqli_query($conn, $buscarLogin);
 
-    //Verifica se a consulta encontrou algum registro associado
-    if($registro = mysqli_fetch_assoc($efetuarLogin)){
-        //Criar variáveis de sessão
+    // Verifica se encontrou algum registro
+    if ($registro = mysqli_fetch_assoc($efetuarLogin)) {
+        // Criar variáveis de sessão
         $_SESSION['idUsuario']    = $registro['idUsuario'];
         $_SESSION['nomeUsuario']  = $registro['nomeUsuario'];
         $_SESSION['emailUsuario'] = $registro['emailUsuario'];
+        $_SESSION['opcaoUsuario'] = $registro['opcaoUsuario'];
         $_SESSION['logado']       = true;
 
-        //Redireciona o usuário para a página inicial
-        header("Location: index.php");
+        // Redireciona para o perfil do usuário
+        header("Location: perfil.php");
         exit();
-    }
-    else{
-        //Redireciona o usuário para a o formLogin
+    } else {
+        // Redireciona com mensagem de erro
         header("Location: formLogin.php?erroLogin=dadosInvalidos");
         exit();
     }
-
-
 ?>
