@@ -1,4 +1,4 @@
-    <?php 
+<?php 
     include "header.php"; 
     echo "<br><br><br><br><br>";
     include "conexaoBD.php";
@@ -94,6 +94,29 @@
             margin: 8px 0 16px 0;
         }
 
+        /* Botão de Logout Estilizado */
+        .btn-logout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 14px;
+            border: 1.5px solid #dc3545;
+            background-color: #ffffff;
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .btn-logout:hover {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
         /* Card do Perfil */
         .card-profile {
             background-color: #ffffff;
@@ -114,48 +137,6 @@
             font-size: 2.6rem;
             font-weight: 700;
             text-transform: uppercase;
-        }
-
-        .btn-edit-profile {
-            border: 1.5px solid #d0d5dd;
-            background-color: #ffffff;
-            border-radius: 50px;
-            padding: 6px 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: background-color 0.2s;
-        }
-
-        .btn-edit-profile:hover {
-            background-color: #f3f4f6;
-            color: #1a1a1a;
-        }
-
-        /* Card Progresso */
-        .card-progresso {
-            background-color: #dbeafe;
-            border: 2px solid #3b82f6;
-            border-radius: 20px;
-            padding: 24px;
-        }
-
-        .progress-bar-bg {
-            height: 20px;
-            background-color: #94a3b8;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            width: 9%;
-            background-color: #004085;
-            border-radius: 10px;
         }
 
         /* Card Sobre Você */
@@ -190,7 +171,6 @@
 </head>
 <body>
 
-
     <main class="container my-4" style="max-width: 1050px;">
         <div class="row g-4">
             
@@ -204,43 +184,12 @@
                             </svg>
                             Meu Perfil
                         </a>
-                        <a href="#" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004085" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
-                            Meu Progresso
-                        </a>
-                        <a href="#" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#004085">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                            </svg>
-                            Meus Favoritos
-                        </a>
-                        <a href="#" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#004085">
-                                <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V18H9v2h6v-2h-2v-2.1c1.86-.4 3.32-1.84 3.61-3.66C19.08 11.63 21 9.55 21 7V7c0-1.1-.9-2-2-2z"/>
-                            </svg>
-                            Conquistas
-                        </a>
-                        <a href="#" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            Histórico
-                        </a>
-                        <a href="#" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#004085">
-                                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-                            </svg>
-                            Configurações
-                        </a>
 
                         <div class="sidebar-divider"></div>
 
-                        <a href="logout.php" class="nav-pill-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Botão de Sair Centralizado e Estilizado -->
+                        <a href="logout.php" class="btn-logout">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                 <polyline points="16 17 21 12 16 7"></polyline>
                                 <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -249,15 +198,9 @@
                         </a>
                     </div>
 
-                    <!-- Ilustração Libras -->
-                    <div class="text-center pt-4">
-                        <svg width="110" height="120" viewBox="0 0 100 110" fill="none" stroke="#004085" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M30 65 C25 50, 25 30, 32 20 C36 15, 42 18, 40 28 C40 38, 40 50, 40 50"/>
-                            <path d="M40 45 C40 30, 45 12, 53 10 C58 8, 63 14, 60 25 C58 35, 55 50, 55 50"/>
-                            <path d="M55 45 C60 38, 70 35, 75 42 C78 46, 75 52, 68 56 C60 60, 50 68, 42 75"/>
-                            <path d="M30 65 C20 70, 15 80, 22 92 C30 102, 55 98, 75 88 C85 82, 90 70, 80 65 C70 60, 60 62, 55 62"/>
-                            <path d="M68 68 L85 75 M78 65 L88 78" stroke-width="1.8"/>
-                        </svg>
+                    <!-- Ilustração Libras Centralizada -->
+                    <div class="d-flex justify-content-center align-items-center w-100 pt-4 pb-2">
+                        <img src="assets\img\librasMaos.png" alt="Ilustração de Libras" style="max-width: 300px; border-radius: 12px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -272,7 +215,7 @@
 
                 <!-- Card 1: Informações do Usuário -->
                 <div class="card-profile mb-4">
-                    <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div class="d-flex align-items-start mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <div class="avatar-circle"><?php echo $inicialAvatar; ?></div>
                             <div>
@@ -282,13 +225,6 @@
                                 </p>
                             </div>
                         </div>
-                        <a href="#" class="btn-edit-profile">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                            </svg>
-                            Editar Perfil
-                        </a>
                     </div>
                     
                     <div class="row pt-2 g-3">
@@ -317,19 +253,7 @@
                     </div>
                 </div>
                 
-                <!-- Card 2: Progresso Geral -->
-                <div class="card-progresso mb-4">
-                    <h3 class="fw-bold h4 mb-3" style="color: #0d0d0d;">Progresso Geral</h3>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="fw-semibold text-dark" style="font-size: 1.05rem;">Você já aprendeu 12 de 121 sinais!</span>
-                        <span class="fw-bold h5 mb-0" style="color: #0d0d0d;">9%</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill"></div>
-                    </div>
-                </div>
-                
-                <!-- Card 3: Sobre Você -->
+                <!-- Card 2: Sobre Você -->
                 <div class="card-sobre">
                     <h3 class="fw-bold h4 mb-3" style="color: #0d0d0d;">Sobre Você</h3>
                     
