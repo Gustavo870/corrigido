@@ -24,7 +24,7 @@
             <h1> Libras e tecnologia <br> <span>para todos.</span> </h1>
             <p>Um guia digital prático que conecta a comunidade surda à tecnologia, ensinando conceitos e termos da informática em LIBRAS. </p>
             <div class="inicio-botoes">
-                <a href="#sinais" class="btn-principal">  Explorar sinais  </a>
+                <a href="dicionario.php" class="btn-principal">  Explorar sinais  </a>
                 <a href="#apresentacao" class="btn-secundario"> Saiba mais</a>
             </div>
         </div>
@@ -147,7 +147,7 @@
             <p>Explore nosso dicionário de sinais relacionadosà informática e descubra uma nova forma deaprender tecnologia.</p>
         </div>
         <div class="explorar-botao">
-            <a href="#" class="btn-explorar">EXPLORAR SINAIS</a>
+            <a href="dicionario.php" class="btn-explorar">EXPLORAR SINAIS</a>
         </div>
     </div>
 </section>
